@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -4.76, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -24.85,
+      "left": -76.8,
+      "attrs": { "value": "150" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 15.6, "left": 234.2, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 119.15,
+      "left": -124.8,
+      "attrs": { "value": "100" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 73.2,
+      "left": 234.2,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 198,
+      "left": 224.6,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 157.55,
+      "left": -124.8,
+      "attrs": { "value": "100" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "r2:2", "led2:A", "gold", [ "h85.2", "v76.8" ] ],
+    [ "led1:A", "r1:2", "red", [ "v0" ] ],
+    [ "led1:C", "esp:GND.3", "red", [ "h-76.4", "v28.8" ] ],
+    [ "esp:26", "r1:1", "red", [ "v-76.8", "h211.35" ] ],
+    [ "esp:33", "r2:1", "gold", [ "h0" ] ],
+    [ "led2:C", "esp:GND.3", "gold", [ "v-115.2", "h-220.4" ] ],
+    [ "r3:1", "esp:32", "green", [ "h-19.2", "v-76.8" ] ],
+    [ "led3:A", "r3:2", "green", [ "v0" ] ],
+    [ "led3:C", "esp:GND.3", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
